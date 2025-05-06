@@ -5,7 +5,9 @@ const blackListTokenModel = require('../models/blackListToken.model');
 
 module.exports.registerUser = async (req, res, next) => {
 
+   //-------------------- Anything invalid in  name,email pass stored in body of express-validator will be stored in req object of validationResult
     const errors = validationResult(req);
+
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }

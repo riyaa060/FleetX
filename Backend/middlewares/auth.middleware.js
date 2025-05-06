@@ -1,3 +1,10 @@
+// NOTE:Yes, in your authentication middleware, calling return next(); after successfully 
+// verifying the captain's identity is essential to pass control to the subsequent route handler,
+// such as the profile route. This ensures that the request proceeds to the intended handler after
+// successful authentication. Using return next();
+//  also clarifies that no further code in the current middleware should be executed after passing 
+//  control.
+
 const userModel = require('../models/user.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');

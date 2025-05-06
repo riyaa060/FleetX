@@ -41,16 +41,12 @@ const Home = () => {
     const { user } = useContext(UserDataContext)
 
     useEffect(() => {
-        socket.emit("join", { userType: "user", userId: user._id })
-    }, [ user ])
+            socket.emit("join", { userType: "user", userId: user._id });
+    
+    }, [ user ]);
+    
 
-    socket.on('ride-confirmed', ride => {
-
-
-        setVehicleFound(false)
-        setWaitingForDriver(true)
-        setRide(ride)
-    })
+    
 
     socket.on('ride-started', ride => {
         console.log("ride")
@@ -179,6 +175,8 @@ const Home = () => {
 
 
         setFare(response.data)
+        // setConfirmRidePanel(true);
+
 
 
     }
@@ -187,7 +185,8 @@ const Home = () => {
         const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/rides/create`, {
             pickup,
             destination,
-            vehicleType
+            vehicleType,
+
         }, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -198,10 +197,10 @@ const Home = () => {
     }
 
     return (
-        <div className='h-screen relative overflow-hidden'>
-            <img className='w-16 absolute left-5 top-5' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="" />
+        <div className=' h-screen relative overflow-hidden'>
+            <img className='w-16 absolute left-5 top-5' src="../assets/images/logonamewhite.png" alt="" />
             <div className='h-screen w-screen'>
-                {/* image for temporary use  */}
+{/* <img src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif" /> */}
                 <LiveTracking />
             </div>
             <div className=' flex flex-col justify-end h-screen absolute top-0 w-full'>

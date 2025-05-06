@@ -23,7 +23,7 @@ module.exports.createRide = async (req, res) => {
 
         const captainsInRadius = await mapService.getCaptainsInTheRadius(pickupCoordinates.ltd, pickupCoordinates.lng, 2);
 
-        ride.otp = ""
+        ride.otp = "" //we dont want to send otp to driver
 
         const rideWithUser = await rideModel.findOne({ _id: ride._id }).populate('user');
 

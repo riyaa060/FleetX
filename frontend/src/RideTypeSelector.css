@@ -1,0 +1,58 @@
+.ride-type-container {
+    text-align: center;
+    padding: 3rem 1.25rem;
+    background-color: #f9f9f9;
+}
+
+h2.ride-heading { /* Add your heading class */
+    font-size: 2rem; /* Increased font size */
+    font-weight: 700; /* Bolder font weight */
+    margin-bottom: 1.5rem; /* Space below the heading */
+    color: #333; /* Darker color for better contrast */
+}
+
+.ride-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ride-button {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    color: #fff;
+}
+
+.ride-button:hover {
+    opacity: 0.95;
+    transform: scale(1.02);
+}
+
+.ride-button:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+/* Button Variants */
+.ride-button.personal {
+    background-color: #007bff;
+}
+
+.ride-button.shared {
+    background-color: #28a745;
+}
+
+.ride-button.shared-women {
+    background-color: #e83e8c;
+}
