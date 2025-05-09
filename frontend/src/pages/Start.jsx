@@ -1,6 +1,6 @@
 
 import React from 'react'
-import backgroundImage from '../assets/images/try3.jpg';
+import backgroundImage from '../assets/images/newbg.png';
 import logo from '../assets/images/logonamewhite.png';
 import { Link } from 'react-router-dom'
 
