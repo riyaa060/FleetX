@@ -51,74 +51,80 @@ const UserSignup = () => {
   }
   return (
     <div>
-      <div className='p-7 h-screen flex flex-col justify-between'>
-        <div>
-          <img className='w-16 mb-10' src={logo} alt="" />
+<div className="min-h-screen flex flex-col justify-between p-6 sm:p-8 md:p-12 bg-white">
+  <div className="w-full max-w-xl mx-auto">
+    <img className="w-16 mb-10" src={logo} alt="Logo" />
 
-          <form onSubmit={(e) => {
-            submitHandler(e)
-          }}>
-
-            <h3 className='text-lg w-1/2  font-medium mb-2'>What's your name</h3>
-            <div className='flex gap-4 mb-7'>
-              <input
-                required
-                className='bg-[#eeeeee] w-1/2 rounded-lg px-4 py-2 border  text-lg placeholder:text-base'
-                type="text"
-                placeholder='First name'
-                value={firstName}
-                onChange={(e) => {
-                  setFirstName(e.target.value)
-                }}
-              />
-              <input
-                required
-                className='bg-[#eeeeee] w-1/2  rounded-lg px-4 py-2 border  text-lg placeholder:text-base'
-                type="text"
-                placeholder='Last name'
-                value={lastName}
-                onChange={(e) => {
-                  setLastName(e.target.value)
-                }}
-              />
-            </div>
-
-            <h3 className='text-lg font-medium mb-2'>What's your email</h3>
-            <input
-              required
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value)
-              }}
-              className='bg-[#eeeeee] mb-7 rounded-lg px-4 py-2 border w-full text-lg placeholder:text-base'
-              type="email"
-              placeholder='email@example.com'
-            />
-
-            <h3 className='text-lg font-medium mb-2'>Enter Password</h3>
-
-            <input
-              className='bg-[#eeeeee] mb-7 rounded-lg px-4 py-2 border w-full text-lg placeholder:text-base'
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value)
-              }}
-              required type="password"
-              placeholder='password'
-            />
-
-            <button
-              className='bg-[#111] text-white font-semibold mb-3 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
-            >Create account</button>
-
-          </form>
-          <p className='text-center'>Already have a account? <Link to='/login' className='text-blue-600'>Login here</Link></p>
-        </div>
-        <div>
-          <p className='text-[10px] leading-tight'>This site is protected by reCAPTCHA and the <span className='underline'>Google Privacy
-            Policy</span> and <span className='underline'>Terms of Service apply</span>.</p>
+    <form onSubmit={submitHandler} className="space-y-6">
+      <div>
+        <h3 className="text-lg font-medium mb-2">What's your name</h3>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <input
+            required
+            className="bg-gray-100 w-full rounded-lg px-4 py-2 border text-lg placeholder:text-base"
+            type="text"
+            placeholder="First name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <input
+            required
+            className="bg-gray-100 w-full rounded-lg px-4 py-2 border text-lg placeholder:text-base"
+            type="text"
+            placeholder="Last name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
         </div>
       </div>
+
+      <div>
+        <h3 className="text-lg font-medium mb-2">What's your email</h3>
+        <input
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="bg-gray-100 w-full rounded-lg px-4 py-2 border text-lg placeholder:text-base"
+          type="email"
+          placeholder="email@example.com"
+        />
+      </div>
+
+      <div>
+        <h3 className="text-lg font-medium mb-2">Enter Password</h3>
+        <input
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="bg-gray-100 w-full rounded-lg px-4 py-2 border text-lg placeholder:text-base"
+          type="password"
+          placeholder="password"
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-black text-white text-lg font-semibold py-3 rounded-lg hover:bg-gray-900 transition-colors"
+      >
+        Create account
+      </button>
+    </form>
+
+    <p className="text-center mt-4">
+      Already have an account?{" "}
+      <Link to="/login" className="text-blue-600 hover:underline">
+        Login here
+      </Link>
+    </p>
+  </div>
+
+  <div className="mt-10 text-center text-xs text-gray-500 leading-snug">
+    This site is protected by reCAPTCHA and the{" "}
+    <span className="underline">Google Privacy Policy</span> and{" "}
+    <span className="underline">Terms of Service</span> apply.
+  </div>
+</div>
+
     </div >
   )
 }
